@@ -17,9 +17,9 @@ app.use(userRouter);
 app.use(adminRouter);
 
 
-const port = 3000;
+const PORT  = process.env.PORT || PORT;
 mongoConnect(()=>{
-    app.listen(port, ()=>{
+    app.listen(PORT , ()=>{
         console.log(`Server is running on the address : http://localhost:${port}`);
     })
 })
